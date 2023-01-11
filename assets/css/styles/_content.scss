@@ -1,0 +1,138 @@
+@use "global";
+/* width */
+
+.content {
+  background-color: var(--main-color);
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-radius: 7px;
+  min-height: 105px;
+  display: grid;
+  place-content: center;
+  h2 {
+    font: 600 32px "Cairo";
+    color: #e9125b;
+    text-align: center;
+    max-height: 0px;
+    opacity: 0;
+    transition: max-height 1s, opacity 0.5s;
+    &.no__product,
+    &.no__result {
+      max-height: 100px;
+      opacity: 1;
+    }
+    @media (max-width: 360px) {
+      font-size: 24px;
+    }
+  }
+  .table {
+    max-height: 0px;
+    opacity: 0;
+    overflow: auto;
+    transition: 1s;
+    position: relative;
+    &.show {
+      max-height: calc(100dvh - 300px);
+      opacity: 1;
+    }
+    .thead {
+      position: sticky;
+      left: 0px;
+      top: 0px;
+      background: #280b70;
+    }
+    .thead,
+    .tbody {
+      width: fit-content;
+    }
+    .tr {
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      width: fit-content;
+      margin-bottom: 7px;
+    }
+    .tbody .tr {
+      background-color: rgb(26 26 26 / 80%);
+      color: var(--txt-color);
+      padding-right: 15px;
+      border-radius: 5px;
+      transition: 0.5s;
+      &:hover {
+        background-color: rgb(24 24 24);
+      }
+      .items {
+        display: flex;
+        p.id {
+          font-weight: bold;
+          color: #009688;
+        }
+        p.category {
+          background-color: #4caf50;
+          color: #222; 
+          line-height: 28px; 
+          border-radius: 20px;
+          align-self: center;
+          display: inline-grid; 
+        }
+      }
+      .icon__box {
+        position: relative;
+        font-size: 18px;
+        i {
+          color: black;
+          cursor: pointer;
+          &.dots {
+            color: white;
+          }
+        }
+        .icons {
+          display: none;
+          gap: 10px;
+          position: absolute;
+          top: 50%;
+          right: 25px;
+          transform: translateY(-50%);
+          background-color: white;
+          padding: 5px;
+          border-radius: 4px;
+          &.open {
+            display: flex;
+          }
+          i {
+            transition: color 0.5s;
+            &.fa-trash-can:hover {
+              color: #e9125b;
+            }
+            &.fa-pen-to-square:hover {
+              color: #4caf50;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .thead .tr p {
+    color: var(--alt-color);
+    font-weight: bold;
+    &#identity {
+      color: #e9125b;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    min-width: 100px;
+    text-align: center;
+    &#identity,
+    &.id {
+      min-width: 40px;
+    }
+    &#title,
+    &.title {
+      min-width: 170px;
+      margin-right: 10px;
+    }
+  }
+}

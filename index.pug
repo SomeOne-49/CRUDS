@@ -1,0 +1,103 @@
+doctype
+html(lang="en")
+  head 
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Curds
+    link(rel="icon" href="short.png")
+    //-! FontAwesome :
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer") 
+    link(rel="stylesheet" type="text/css" href="assets/css/style.css")
+  body
+    .container 
+      .head   
+        h1 Codeholic
+        p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, adipisci ipsam.
+      section     
+        .btns__box 
+          button.add__btn(data-box="add__box") Add
+          button.calc__btn(data-box="calc__box") Calculate
+          button.search__btn(data-box="search__box") Search
+          button.remove__btn(data-box="remove__box") Remove All
+        .boxes 
+          #add__box.box
+            .box
+              h2 Add Item
+              .inputs 
+                label.required
+                  input(type="text" placeholder="Title" )
+                label.required
+                  input(type="text" placeholder="Category" )
+                label.required
+                  input(type="number" placeholder="Price" )
+                label
+                  input(type="number" placeholder="count" )
+                label.required
+                  input(type="number" placeholder="Taxes" )
+                label
+                  input(type="number" placeholder="Ads" )
+                label
+                  input(type="number" placeholder="Discount" )
+                .percentage
+                  input(type="checkbox" id="add__percentage" checked)
+                  label(for="add__percentage") Discount By Percentage?
+              .control__btns
+                button.addition(data-box="add__box") Add 
+                button.cansel(data-box="add__box") Cansel
+          #calc__box.box
+            .box
+              h2 Calculate
+              .inputs 
+                label
+                  input(type="number" placeholder="Price" id="price")
+                label
+                  input(type="number" placeholder="count" id="count")
+                label
+                  input(type="number" placeholder="Taxes" id="taxes")
+                label
+                  input(type="number" placeholder="Ads" id="ads") 
+                label
+                  input(type="number" placeholder="Discount" id="discount")
+                .percentage
+                  input(type="checkbox" id="calc__percentage" checked)
+                  label(for="calc__percentage") Discount By Percentage?
+              .total Total: #[span $]#[span 0]
+              .control__btns
+                button.cansel(data-box="calc__box") Cansel
+          #search__box.box
+            .box
+              h2 Search 
+              .search__type 
+                h3 Search By:
+                .types
+                  input(id="by__title" name="search-by" type="radio" checked) 
+                  label(for='by__title') Title
+                  input(id="by__category" name="search-by" type="radio")
+                  label(for='by__category') Category
+              input(type="search" placeholder="Search...")
+              .control__btns
+                button.cansel(data-box="search__box") Cansel
+          #remove__box.box
+            .box
+              h2 Delete All 
+              p Are you sure you want to delete All products?! #[span you'll not be able to recover it.]
+              .control__btns 
+                button.remove__all(data-box="remove__box") Remove
+                button.cansel(data-box="remove__box") Cansel
+        .content
+          h2#alert__products.alert.no__product There Is No Data Yet
+          h2#alert__search.alert There Is No Matching Result
+          .table 
+            .thead 
+              .tr 
+                p.th#identity ID
+                p.th#title Title
+                p.th#category Category
+                p.th#price Price
+                p.th#count Count
+                p.th#taxes Taxes
+                p.th#ads Ads
+                p.th#discount Discount
+            .tbody 
+      script(src="assets/js/main.js") 

@@ -1,0 +1,114 @@
+/*-----------------------------------*\
+  *** CUSTOM PROPERTY ***
+\*-----------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Sevillana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+:root {
+  --main-color: #280b70;
+  --alt-color: #03d6f9;
+  --txt-color: #ffffff;
+  --background-color: #00003e;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  border: 1px solid #5636a5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4d2e99;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #673ab7;
+}
+
+/*-----------------------------------*\
+  *** RESET ***
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  height: 100vh;
+  font-family: "Cairo", sans-serif;
+  overflow: hidden;
+}
+
+button {
+  user-select: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  &[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  &[type="checkbox"],
+  &[type="radio"] {
+    display: none;
+  }
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px 15px 15px;
+}
+
+.head {
+  text-align: center;
+  padding: 0 15px 15px;
+  h1 {
+    color: var(--alt-color);
+    margin-bottom: 15px;
+    font-size: 50px;
+    font-family: "Sevillana", cursive;
+  }
+  p {
+    color: var(--txt-color);
+    font-size: 18px;
+    font-family: "Cairo Play", cursive;
+  }
+}
+
+section {
+  overflow-y: auto;
+  height: calc(100dvh - 222px);
+  padding: 15px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    height: calc(100dvh - 229px);
+  }
+  @media (max-width: 390px) {
+    height: calc(100dvh - 262px);
+  }
+}

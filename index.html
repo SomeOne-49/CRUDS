@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curds</title>
+    <link rel="icon" href="short.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  </head>
+  <body>
+    <div class="container"> 
+      <div class="head">  
+        <h1>Codeholic</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, adipisci ipsam.</p>
+      </div>
+      <section>    
+        <div class="btns__box"> 
+          <button class="add__btn" data-box="add__box">Add</button>
+          <button class="calc__btn" data-box="calc__box">Calculate</button>
+          <button class="search__btn" data-box="search__box">Search</button>
+          <button class="remove__btn" data-box="remove__box">Remove All</button>
+        </div>
+        <div class="boxes"> 
+          <div class="box" id="add__box">
+            <div class="box">
+              <h2>Add Item</h2>
+              <div class="inputs"> 
+                <label class="required">
+                  <input type="text" placeholder="Title">
+                </label>
+                <label class="required">
+                  <input type="text" placeholder="Category">
+                </label>
+                <label class="required">
+                  <input type="number" placeholder="Price">
+                </label>
+                <label>
+                  <input type="number" placeholder="count">
+                </label>
+                <label class="required">
+                  <input type="number" placeholder="Taxes">
+                </label>
+                <label>
+                  <input type="number" placeholder="Ads">
+                </label>
+                <label>
+                  <input type="number" placeholder="Discount">
+                </label>
+                <div class="percentage">
+                  <input type="checkbox" id="add__percentage" checked>
+                  <label for="add__percentage">Discount By Percentage?</label>
+                </div>
+              </div>
+              <div class="control__btns">
+                <button class="addition" data-box="add__box">Add </button>
+                <button class="cansel" data-box="add__box">Cansel</button>
+              </div>
+            </div>
+          </div>
+          <div class="box" id="calc__box">
+            <div class="box">
+              <h2>Calculate</h2>
+              <div class="inputs"> 
+                <label>
+                  <input type="number" placeholder="Price" id="price">
+                </label>
+                <label>
+                  <input type="number" placeholder="count" id="count">
+                </label>
+                <label>
+                  <input type="number" placeholder="Taxes" id="taxes">
+                </label>
+                <label>
+                  <input type="number" placeholder="Ads" id="ads">
+                </label>
+                <label>
+                  <input type="number" placeholder="Discount" id="discount">
+                </label>
+                <div class="percentage">
+                  <input type="checkbox" id="calc__percentage" checked>
+                  <label for="calc__percentage">Discount By Percentage?</label>
+                </div>
+              </div>
+              <div class="total">Total: <span>$</span><span>0</span></div>
+              <div class="control__btns">
+                <button class="cansel" data-box="calc__box">Cansel</button>
+              </div>
+            </div>
+          </div>
+          <div class="box" id="search__box">
+            <div class="box">
+              <h2>Search </h2>
+              <div class="search__type"> 
+                <h3>Search By:</h3>
+                <div class="types">
+                  <input id="by__title" name="search-by" type="radio" checked>
+                  <label for="by__title">Title</label>
+                  <input id="by__category" name="search-by" type="radio">
+                  <label for="by__category">Category</label>
+                </div>
+              </div>
+              <input type="search" placeholder="Search...">
+              <div class="control__btns">
+                <button class="cansel" data-box="search__box">Cansel</button>
+              </div>
+            </div>
+          </div>
+          <div class="box" id="remove__box">
+            <div class="box">
+              <h2>Delete All </h2>
+              <p>Are you sure you want to delete All products?! <span>you'll not be able to recover it.</span></p>
+              <div class="control__btns"> 
+                <button class="remove__all" data-box="remove__box">Remove</button>
+                <button class="cansel" data-box="remove__box">Cansel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <h2 class="alert no__product" id="alert__products">There Is No Data Yet</h2>
+          <h2 class="alert" id="alert__search">There Is No Matching Result</h2>
+          <div class="table"> 
+            <div class="thead"> 
+              <div class="tr"> 
+                <p class="th" id="identity">ID</p>
+                <p class="th" id="title">Title</p>
+                <p class="th" id="category">Category</p>
+                <p class="th" id="price">Price</p>
+                <p class="th" id="count">Count</p>
+                <p class="th" id="taxes">Taxes</p>
+                <p class="th" id="ads">Ads</p>
+                <p class="th" id="discount">Discount</p>
+              </div>
+            </div>
+            <div class="tbody"> </div>
+          </div>
+        </div>
+      </section>
+      <script src="assets/js/main.js"> </script>
+    </div>
+  </body>
+</html>
